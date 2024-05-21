@@ -1,12 +1,8 @@
 fun main() {
-    val notes: Array<UByte> = arrayOf(25u, 45u, 20u, 75u, 255u, 2u)
-    println("Hello ${greeting("Christian", "Plaisance")} !")
-    getAge()
-    getAverage(notes)
-}
-
-fun greeting(firstName: String, lastName: String): String {
-    return "$firstName $lastName"
+    val jeanCharles = Student("Jean-Charles", "Dutay de la Chaletière", 'M', "1990-5-15")
+    val isabelle = Student("Isabelle", "Martinez", 'F', "1983-7-25")
+    println(jeanCharles.greet())
+    println(isabelle.greet())
 }
 
 fun getAge() {
