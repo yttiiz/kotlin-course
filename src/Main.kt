@@ -1,8 +1,7 @@
 fun main() {
-    val jeanCharles = Student("Jean-Charles", "Dutay de la Chaletière", 'M', "1990-5-15")
-    val isabelle = Student("Isabelle", "Martinez", 'F', "1983-7-25")
+    val jeanCharles = Student("John", "Doe", "1990-5-15")
     println(jeanCharles.greet())
-    println(isabelle.greet())
+    println(jeanCharles.getAverage(arrayOf(12u, 16u, 8u, 11u, 2u, 15u)))
 }
 
 fun getAge() {
@@ -13,22 +12,4 @@ fun getAge() {
         val agePlus2years = age.toByte() + 2
         println("Vous avez $age ans et dans 2 ans vous aurez $agePlus2years ans")
     }
-}
-
-fun getAverage(notes: Array<UByte>): String {
-    var sentence = "Pour l'ensemble de notes "
-    var global = 0f
-    for (i in notes.indices) {
-        sentence += if (i < notes.size - 2) {
-            "${notes[i]}, "
-        } else if (i == notes.size - 2) {
-            "${notes[i]} "
-        } else "et ${notes[i]}, "
-        global += notes[i].toFloat()
-    }
-
-    global /= notes.size.toFloat()
-    sentence += "la moyenne est de $global."
-
-    return sentence
 }
