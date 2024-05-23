@@ -1,7 +1,8 @@
 fun main() {
-    val jeanCharles = Student("John", "Doe", "1990-5-15")
-    println(jeanCharles.greet())
-    println(jeanCharles.getAverage(arrayOf(12u, 16u, 8u, 11u, 2u, 15u)))
+    val johnDoe = Student("John", "Doe", "1980-05-25")
+    println(johnDoe.greet())
+    println(johnDoe.getAverage(arrayOf(12u, 16u, 8u, 11u, 2u, 15u)))
+    println(johnDoe.getAge())
 }
 
 fun getAge() {

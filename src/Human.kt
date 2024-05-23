@@ -16,6 +16,6 @@ open class Human(
 
     fun gender(): String {
         val gender = if (this.isMale()) "un homme" else "une femme"
-        return "Je suis $gender."
+        return "Je suis $gender"
     }
 }

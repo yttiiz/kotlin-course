@@ -1,3 +1,6 @@
+import java.time.LocalDate
+import java.time.Period
+
 class Student(
     private val firstName: String,
     private val lastName: String,
@@ -5,16 +8,23 @@ class Student(
     private val gender: Char = 'M'
 ): Human(firstName, lastName, gender) {
     override fun greet(): String {
-        return "${super.greet()} ${this.gender()} ${this.wasBorn()}"
+        return "${super.greet()} ${this.gender()}. ${this.wasBorn()} et j'ai ${this.getAge()} ans."
     }
 
     private fun wasBorn(): String {
         val born = if (this.isMale()) "né" else "née"
-        return "Je suis $born le $birth."
+        return "Je suis $born le $birth"
     }
 
-    fun toFixed(num: Float): String {
+    private fun toFixed(num: Float): String {
         return "%.2f".format(num)
+    }
+
+    private fun getAge(): Int {
+        return Period.between(
+            LocalDate.parse(birth),
+            LocalDate.now()
+        ).years
     }
 
     fun getAverage(notes: Array<UByte>): String {
