@@ -11,6 +11,8 @@ class Student(
         return "${super.greet()} ${this.gender()}. ${this.wasBorn()} et j'ai ${this.getAge()} ans."
     }
 
+    private lateinit var cbCard: Map<String, String>
+
     private fun wasBorn(): String {
         val born = if (this.isMale()) "né" else "née"
         return "Je suis $born le $birth"
@@ -43,5 +45,13 @@ class Student(
         sentence += "la moyenne de ${this.getFullName()} est de ${this.toFixed(global)}."
 
         return sentence
+    }
+
+    fun setCbCard(number: String, date: String, crypto: String) {
+        cbCard = mapOf("number" to number, "date" to date, "crypto" to crypto)
+    }
+
+    fun getCbCard(): String {
+        return "NUMBER : ${cbCard.get("number")}\nUNTIL : ${cbCard.get("date")}\nCRYPTOGRAM : ${cbCard.get("crypto")}"
     }
 }
