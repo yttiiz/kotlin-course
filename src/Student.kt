@@ -1,7 +1,7 @@
 import java.time.LocalDate
 import java.time.Period
 
-class Student(
+data class Student(
     private val firstName: String,
     private val lastName: String,
     private val birth: String,

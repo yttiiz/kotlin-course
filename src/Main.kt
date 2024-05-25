@@ -4,6 +4,15 @@ fun main() {
     println(johnDoe.greet())
     println(johnDoe.getAverage(arrayOf(12u, 16u, 8u, 11u, 2u, 15u)))
     println(johnDoe.getCbCard())
+
+    println(bestFrenchClubsList(
+        "Olympique de Marseille",
+        "Paris Saint-Germain",
+        "Olympique Lyonnais",
+        "AJ Auxerre"
+    ))
+
+    greet("Dominique")
 }
 
 fun getAge() {
